@@ -1,8 +1,8 @@
 body{
   font-family: "Benton Sans"
 }
-
-#navbar-brand{
+/*navbar*/
+.navbar > .nav-header > .navbar-brand{
   font-size: 1.5rem;
   color: #f6682f;
   font-weight: bold;
@@ -16,27 +16,44 @@ body{
   padding-left: 5px;
   padding-right : 5px;
 }
-
-/*slideshow*/
-.slideshow {
-  height: 500px;
+/*category*/
+.category{
+  margin-bottom: 15px;
+}
+.section-header{
+  text-align: center;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #666a73;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 20px;
+}
+.group{
   position: relative;
-  padding: 0;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.slideshow img {
+  text-align: center;
+  color: white;
   width: 100%;
-  max-height: 450px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.centered{
   position: absolute;
-  opacity: 0;
-  transition: all 1s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.background-image{
+  height: 220px;
+  width: 100%;
+}
+.category-card__label{
+  color: white;
+  font-weight: 600;
 }
 
-.slideshow img.active {
-  opacity: 1.0;
-}
+
 
 /*footer*/
 .global-footer{
@@ -123,28 +140,4 @@ body{
 .text-copyright{
   color: #ADB0B6;
   font-size: 15px;
-}
-
-/*signin.pug style*/
-.logo{
- width: 72px;
- height: 72px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom : 20px;
-}
-.signin-title, .signin-text{
-  width: 100%;
-  text-align: center;
-}
-.signin-title{
-  color: #45494e;
-  font-size: 2em;
-  margin-top: 10px;
-  font-weight: 200;
-}
-.signin-text{
-  color: #666a73;
-  font-size: 1em;
-  margin-bottom: 15px;
 }
