@@ -1,0 +1,150 @@
+body{
+  font-family: "Benton Sans"
+}
+
+#navbar-brand{
+  font-size: 1.5rem;
+  color: #f6682f;
+  font-weight: bold;
+}
+
+#createEvent{
+  color: #0093D7;
+}
+
+.nav-item{
+  padding-left: 5px;
+  padding-right : 5px;
+}
+
+/*slideshow*/
+.slideshow {
+  height: 500px;
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slideshow img {
+  width: 100%;
+  max-height: 450px;
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.slideshow img.active {
+  opacity: 1.0;
+}
+
+/*footer*/
+.global-footer{
+  color: #666A73;
+  position: relative;
+  border-top: #666A73 solid 6px;
+  background: #282C35;
+}
+.grid{
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.medium-hide{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.small-hide > li{
+  text-align: left;
+}
+.footer-group{
+  margin: 0;
+  width: 100%;
+}
+.footer-links{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.footer-links > a{
+  color: #D2D6DF;
+}
+.footer-links > li > a, .footer-links > li > i > a{
+  color: #D2D6DF;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.footer-links > li{
+  color: #D2D6DF;
+  padding: 0;
+  line-height: 1.9;
+  padding-right: 20px;
+  list-style-type: none;
+}
+.footer-section__border{
+  border-top : 1px solid #363A43;
+}
+.country > li{
+  display: inline;
+}
+.text-body-small{
+  color: #fff;
+}
+.footer-text-heading-primary{
+  color: #ADB0B6;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: left;
+}
+.large-hide > li{
+  display: inline;
+}
+.large-hide{
+  padding: 0;
+  padding-left: 15px;
+}
+.footer-corps{
+  margin-top: 20px;
+  border-top: 1px solid #363A43;
+  border-bottom: 1px solid #363A43;
+  text-align: center;
+}
+.btn-third{
+  background: #282C35;
+  color: #D2D6DF;
+  border: .3px solid #D2D6DF;
+}
+.text-border{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+.text-copyright{
+  color: #ADB0B6;
+  font-size: 15px;
+}
+
+/*signin.pug style*/
+.logo{
+ width: 72px;
+ height: 72px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom : 20px;
+}
+.signin-title, .signin-text{
+  width: 100%;
+  text-align: center;
+}
+.signin-title{
+  color: #45494e;
+  font-size: 2em;
+  margin-top: 10px;
+  font-weight: 200;
+}
+.signin-text{
+  color: #666a73;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
