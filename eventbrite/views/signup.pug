@@ -1,0 +1,38 @@
+extends layout
+
+block top-nav
+  .header.clearfix
+    nav.navbar.navbar-expand-md.navbar-light
+      .nav-header
+        a.navbar-brand(href='/') Eventbrite
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+block hero-unit
+  
+block content
+  .container
+    .row
+      img.logo.justify-content-center(src="favicon.ico", alt="alt")
+      .signin-title Welcome
+      .signin-text Create an account
+    form.form-signin(action='/signup', method='POST')
+      h3.form-signin-heading Signup
+      .form-group
+        label(for='email') Email address
+        input.form-control(type='email', id='email', name='email', placeholder='Email')
+      .form-group
+        label(for='name') Name
+        input.form-control(type='text', id='name', name='name', placeholder='Your name')
+      .form-group
+        label(for='password') Password
+        input.form-control(type='password', id='password', name='password', placeholder='Password')
+      .form-group
+        label(for='password_confirmation') Password Confirmation
+        input.form-control(type='password', id='password_confirmation', name='password_confirmation', placeholder='Password')
+      a.btn.btn-outline-secondary(href='/users') List
+      | 
+      button.btn.btn-primary(type='submit') Register 
+
+block category
+block footer
