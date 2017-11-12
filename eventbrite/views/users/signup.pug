@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block top-nav
   .header.clearfix
@@ -13,10 +13,10 @@ block hero-unit
 block content
   .container
     .row
-      img.logo.justify-content-center(src="favicon.ico", alt="alt")
+      img.logo.justify-content-center(src="/favicon.ico", alt="alt")
       .signin-title Welcome
       .signin-text Create an account
-    form.form-signin(action='/signup', method='POST')
+    form.form-signin(action='/users', method='POST')
       h3.form-signin-heading Signup
       .form-group
         label(for='email') Email address

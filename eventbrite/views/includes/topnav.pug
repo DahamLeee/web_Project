@@ -24,7 +24,11 @@
             a.dropdown-item(href='#') Where are my tickets?
             a.dropdown-item(href='#') How to contact the event organizer
             a.dropdown-item(href='#') Help Center
-        li.nav-item
-          a.nav-link(href='/signin') SIGN IN
+        if (!currentUser)
+          li.nav-item
+            a.nav-link(href='/signin') SIGN IN
+        else
+          li.nav-item
+            a.nav-link(href='/') My Profile
         li.nav-item
           a#createEvent.nav-link(href='#') CREATE EVENT

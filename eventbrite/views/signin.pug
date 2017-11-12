@@ -13,7 +13,7 @@ block hero-unit
 block content
   .container
     .row
-      img.logo.justify-content-center(src="favicon.ico", alt="alt")
+      img.logo.justify-content-center(src="/favicon.ico", alt="alt")
       .signin-title Let's get started
       .signin-text Enter your email to sign up or log in.
     form.form-signin(action='/signin', method='POST')
@@ -40,7 +40,7 @@ block content
         | Signin with Facebook
         
       div.sub
-        a(href='/signup') Signup
+        a(href='/users/signup') Signup
         |
         | /
         |
