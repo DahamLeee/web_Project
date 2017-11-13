@@ -42,7 +42,10 @@ function validateForm(form, options){
 }
 
 /* GET users listing. */
-
+router.get('/', needAuth, catchErrors(async (req, res, next) => {
+  const users = await User.find({});
+  res.render('/', {users: users});
+}))
 
 router.get('/signup', (req, res, next) => {
   res.render('users/signup', {messages: req.flash()});
@@ -66,7 +69,7 @@ router.post('/', catchErrors(async(req, res, next) => {
   });
   user.password = await user.generateHash(req.body.password);
   await user.save();
-  req.flash('succes', 'Registered succesfully. Please sign in.');
+  req.flash('success', 'Registered succesfully. Please sign in.');
   res.redirect('/');
 }));
 

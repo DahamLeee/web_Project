@@ -38,11 +38,12 @@ mongoose.connection.on('error', console.error);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 // _method를 통해서 method를 변경할 수 있도록 함. PUT이나 DELETE를 사용할 수 있도록.
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
@@ -68,6 +69,10 @@ app.use(flash()); // flash message를 사용할 수 있도록
 
 // public 디렉토리에 있는 내용은 static하게 service하도록.
 app.use(express.static(path.join(__dirname, 'public')));
+
+//==============================================
+// Passport 초기화
+//==============================================
 
 // pug의 local에 현재 사용자 정보와 flash 메시지를 전달하자.
 app.use(function(req, res, next) {
