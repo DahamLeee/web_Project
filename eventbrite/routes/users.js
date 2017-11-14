@@ -51,6 +51,28 @@ router.get('/signup', (req, res, next) => {
   res.render('users/signup', {messages: req.flash()});
 });
 
+/*
+이거는 그냥 단순히 edit를 눌렀을 때 users/edit로 render를 시켜주는 router인거임
+router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
+
+}))
+*/
+
+/* 여기서 put 메소드는 뭐를 하는것일까?
+edit를 하기위한 route인거 같다. edit.pug에서 form의 action:이 method put으로 가게 코딩되어있음
+router.put('/:id', needAuth, catchErrors(async (req, res, next) => {
+
+}))
+*/
+
+/*
+사용자의 id를 get했을때 사용자의 id값을 찾고 맞다면 res.render로 어느 페이지로 갈지 설정해줌
+router.get('/:id', catchErrors(async (req, res, next) => {
+
+}))
+*/
+
+//signup ,, id만들기
 router.post('/', catchErrors(async(req, res, next) => {
   var err = validateForm(req.body, {needPassword: true});
   if(err){

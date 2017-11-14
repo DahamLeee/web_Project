@@ -5,7 +5,7 @@ module.exports = (app, passport) => {
 
   app.post('/signin', passport.authenticate('local-signin', {
     successRedirect : '/', // redirect to the secure profile section
-    failureRedirect : '/users/signup', // redirect back to the signup page if there is an error
+    failureRedirect : '/signin', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
 
@@ -18,14 +18,14 @@ module.exports = (app, passport) => {
       failureRedirect : '/signin',
       failureFlash : true // allow flash messages
     }), (req, res, next) => {
-      req.flash('success', 'Welcome!');
+      req.flash('success', 'Successfully signin. Welcome!');
       res.redirect('/');
     }
   );
 
   app.get('/signout', (req, res) => {
     req.logout();
-    req.flash('success', 'Successfully signed out');
+    req.flash('success', 'Successfully signed out.');
     res.redirect('/');
   });
 };
