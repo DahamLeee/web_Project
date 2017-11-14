@@ -1,6 +1,12 @@
 body{
   font-family: "Benton Sans"
 }
+.btn-mine{
+  background-color: #F86820;
+  border-color: #F86820;
+  border-radius: 20px;
+  color: #fff;
+}
 /*navbar*/
 .navbar > .nav-header > .navbar-brand{
   font-size: 1.5rem;
@@ -16,6 +22,52 @@ body{
   padding-left: 5px;
   padding-right : 5px;
 }
+
+/*Search Bar*/
+.search-event{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -140px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 80%;
+}
+
+.search-event > div.card-body{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 25px;
+}
+
+.search-event > div.card-body > h3.card-title{
+  font-weight: 200;
+  color: #F86820;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 45px;
+}
+
+.search-event > div.card-body > .show{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+
+.col-info, .col-loc, .select-box, .col-btn{
+  height: 40px;
+  border-radius: 4px;
+  border: 0.4px solid rgb(194, 194, 194);
+}
+
+.col-btn{
+  background-color: #F86820;
+  color: #fff;
+  width: 150px;
+}
+
 /*category*/
 .category{
   margin-bottom: 15px;
@@ -52,7 +104,6 @@ body{
   color: white;
   font-weight: 600;
 }
-
 
 
 /*footer*/
@@ -140,4 +191,100 @@ body{
 .text-copyright{
   color: #ADB0B6;
   font-size: 15px;
+}
+/*extra small*/
+@media (min-width: 1px) and (max-width: 576px) {
+  .form-row{
+    width: 90%;
+  }
+
+  .search-event{
+    display: none;
+  }
+  div.mainImg{
+    display: none;
+  }
+  .card-group__sports{
+    display: none;
+  }
+  .background-image{
+    height: 150px;
+    width: 100%;
+  }
+  .small-hide{
+    display: none;
+  }
+  .text-copyright{
+    font-size: 12px;
+  }
+}
+
+/*sm*/
+@media (min-width: 576px) and (max-width: 768px) {
+  .search-event{
+    width: 90%;
+  }
+  .col-info, .select-box, .col-btn{
+    display: inline;
+  }
+  .col-loc{
+    display: none;
+  }
+  /*#inputEvents{
+    display: none;
+  }*/
+  h3.card-title{
+    font-size: 35px;
+  }
+/*
+  #search-loc{
+    display: inline-block;
+
+  }
+  #search-loc > h5, .col{
+    display: inline;
+  }
+
+  #search-loc > .col{
+    width: 60%;
+  }
+  */
+  .card-group__sports{
+    display: none;
+  }
+  .small-hide{
+    display: none;
+  }
+  .text-copyright{
+    font-size: 12px;
+  }
+}
+
+/*md*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media (min-width: 992px) {
+  h3.card-title{
+      font-size: 50px;
+  }
+  .col-info{
+    width: 240px;
+  }
+  .col-loc{
+    width: 200px;
+  }
+  .select-box{
+    width: 200px
+  }
+  .col-btn{
+    width: 150px;
+  }
+  .hide-large{
+    display: none;
+  }
+  li.hide-large{
+    padding-right: 0;
+  }
 }

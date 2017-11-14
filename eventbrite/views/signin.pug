@@ -5,8 +5,7 @@ block top-nav
     nav.navbar.navbar-expand-md.navbar-light
       .nav-header
         a.navbar-brand(href='/') Eventbrite
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
-        span.navbar-toggler-icon
+      
 
 block hero-unit
   
@@ -33,8 +32,8 @@ block content
           input(type="checkbox", value="remember-me")
           |
           | Remember me
-      button.btn.btn-primary.btn-block(type='submit') Signin
-      a.btn.btn-dark.btn-block(href='/auth/facebook')
+      button.btn.btn-mine.btn-block(type='submit') Signin
+      a.btn.btn-primary.btn-block(href='/auth/facebook')
         i.fa.fa-facebook.fa-lg 
         | &nbsp;
         | Signin with Facebook

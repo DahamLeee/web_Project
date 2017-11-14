@@ -2,3 +2,27 @@ extends layout
 
 block hero-unit
   include ./includes/slideshow
+
+  .card.search-event
+    .card-body
+      h3.card-title Find your next experience
+      .container.show
+        form.row.justify-content-center.form-inline(action="#" method="GET")
+          .form-row
+            .form-group
+              .sr-only search events
+              input.col-info(type='text', name='information', placeholder='Search events or categories')
+            .form-group  
+              input.col-loc(type='text', name='location', placeholder='City or location')
+            .form-group
+              select.select-box(name='dates')
+                option(value selected='selected') All Dates
+                option(value='today') Today
+                option(value='tomorrow') Tomorrow
+                option(value='this_week') This Week
+                option(value='this_weekend') This Weekend
+                option(value='next_week') Next Week
+                option(value='next_month') Next Month
+            .form-group
+              input.col-btn(type='button', name='SEARCH', value='SEARCH')  
+block content

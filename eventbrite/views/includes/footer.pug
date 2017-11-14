@@ -99,53 +99,53 @@
             li
               i.fa.fa-google-plus(aria-hidden='true')
                 a(href="#") Google+ 
-      //여기는 로그인 하지 않은 사람들이 보여짐
-      .footer-group.small-hide       
-        .footer-section__border
-          h3.footer-text-heading-primary Country
-          ul.footer-links.country
-            li
-              a(href="#") Argentina
-            li
-              a(href="#") Australia
-            li
-              a(href="#") Brasil
-            li
-              a(href="#") Canada (EN)
-            li
-              a(href="#") Canada (FR)
-            li
-              a(href="#") Chile
-            li
-              a(href="#") Colombia
-            li
-              a(href="#") Deutschland
-            li
-              a(href="#") Espana
-            li
-              a(href="#") France
-            li
-              a(href="#") Hong Kong
-            li
-              a(href="#") Ireland  
-            li
-              a(href="#") Italia 
-            li
-              a(href="#") Mexico 
-            li
-              a(href="#") Nederland
-            li
-              a(href="#") New Zealand 
-            li
-              a(href="#") Peru  
-            li
-              a(href="#") Portugal
-            li
-              a(href="#") Singapore
-            li
-              a(href="#") United Kingdom
-            li
-              a(href="#") United States 
+      if (!currentUser)
+        .footer-group.small-hide       
+          .footer-section__border
+            h3.footer-text-heading-primary Country
+            ul.footer-links.country
+              li
+                a(href="#") Argentina
+              li
+                a(href="#") Australia
+              li
+                a(href="#") Brasil
+              li
+                a(href="#") Canada (EN)
+              li
+                a(href="#") Canada (FR)
+              li
+                a(href="#") Chile
+              li
+                a(href="#") Colombia
+              li
+                a(href="#") Deutschland
+              li
+                a(href="#") Espana
+              li
+                a(href="#") France
+              li
+                a(href="#") Hong Kong
+              li
+                a(href="#") Ireland  
+              li
+                a(href="#") Italia 
+              li
+                a(href="#") Mexico 
+              li
+                a(href="#") Nederland
+              li
+                a(href="#") New Zealand 
+              li
+                a(href="#") Peru  
+              li
+                a(href="#") Portugal
+              li
+                a(href="#") Singapore
+              li
+                a(href="#") United Kingdom
+              li
+                a(href="#") United States 
                
       .footer-group.footer-corps        
         .row

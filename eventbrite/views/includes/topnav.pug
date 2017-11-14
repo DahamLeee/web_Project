@@ -2,8 +2,8 @@
   nav.navbar.navbar-expand-md.navbar-light.bg-light
     .nav-header
       a.navbar-brand(href='/') Eventbrite
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
-        span.navbar-toggler-icon
+    button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+      span.navbar-toggler-icon
         
     #navbarNav.collapse.navbar-collapse.justify-content-end
       ul.navbar-nav
@@ -28,7 +28,10 @@
           li.nav-item
             a.nav-link(href='/signin') SIGN IN
         else
-          li.nav-item
-            a.nav-link(href='/') My Profile
+          li.nav-item.dropdown
+            a#profile.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") My Profile
+            .dropdown-menu(aria-labelledby='profile')
+              a.dropdown-item(href='#') Account Settings
+              a.dropdown-item(href='/signout') Signout
         li.nav-item
           a#createEvent.nav-link(href='#') CREATE EVENT
