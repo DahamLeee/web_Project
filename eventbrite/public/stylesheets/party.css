@@ -1,0 +1,30 @@
+.main-title{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #666a73;
+  height: 50px;
+  border-bottom: solid .5px #666a73;
+}
+
+.form-create label{
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #282C35
+}
+
+.event_details_wrapper .form-group{
+  width: 70%;
+}
+
+.event_tickets_wrapper p{
+  text-align: center;
+}
+
+.event_ceategories_wrapper{
+  margin-bottom: 70px;
+}
+
+.event_ceategories_wrapper .form-group{
+  width: 50%;
+}
