@@ -10,14 +10,12 @@
         li.nav-item
           a.nav-link(href='#') BROWSE EVENTS
         li.nav-item.dropdown
-          a#learn.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") LEARN MORE
+          a#organize.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") ORGANIZE
           .dropdown-menu(aria-labelledby='learn')
+            a.dropdown-item(href='#') Overview
+            a.dropdown-item(href='#') Pricing
             a.dropdown-item(href='#') Blog
             a.dropdown-item(href='#') Resources
-            a.dropdown-item(href='#') Fees
-            a.dropdown-item(href='#') How it works
-            a.dropdown-item(href='#') Features
-            a.dropdown-item(href='#') Music Ticketing
         li.nav-item.dropdown
           a#help.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") HELP
           .dropdown-menu(aria-labelledby='help')
@@ -34,4 +32,4 @@
               a.dropdown-item(href='#') Account Settings
               a.dropdown-item(href='/signout') Signout
         li.nav-item
-          a#createEvent.nav-link(href='#') CREATE EVENT
+          a#createEvent.nav-link(href='/parties/create') CREATE EVENT

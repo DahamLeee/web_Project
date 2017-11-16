@@ -79,25 +79,25 @@
             li
               h3.footer-text-heading-primary Connect With Us   
             li
-              i.fa.fa-envelope(aria-hidden='true')
+              i.fa.fa-envelope(aria-hidden='true') 
                 a(href="#") Contact Support
             li
-              i.fa.fa-envelope(aria-hidden='true')
+              i.fa.fa-envelope(aria-hidden='true') 
                 a(href="#") Contact Sales
             li
-              i.fa.fa-twitter(aria-hidden='true')
+              i.fa.fa-twitter(aria-hidden='true') 
                 a(href="#") Twitter
             li
-              i.fa.fa-facebook-official(aria-hidden='true')
+              i.fa.fa-facebook-official(aria-hidden='true') 
                 a(href="#") Facebook
             li
-              i.fa.fa-linkedin-square(aria-hidden='true')
+              i.fa.fa-linkedin-square(aria-hidden='true') 
                 a(href="#") Linkedln
             li
-              i.fa.fa-instagram(aria-hidden='true')
+              i.fa.fa-instagram(aria-hidden='true') 
                 a(href="#") Instagram
             li
-              i.fa.fa-google-plus(aria-hidden='true')
+              i.fa.fa-google-plus(aria-hidden='true') 
                 a(href="#") Google+ 
       if (!currentUser)
         .footer-group.small-hide       
@@ -180,27 +180,26 @@
               a.text-body-small(href="#") Cookies
           
           .dropdown.region-selector.col-sm-12.col-md-4.col-lg-2.justify-content-center
-            .dropdown
-              button#region.btn.btn-third.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
-                i.fa.fa-globe(aria-hidden="true") United States
-              .dropdown-menu(aria-labelledby="region")
-                button.dropdown-item(type="button") Argentina
-                button.dropdown-item(type="button") Australia
-                button.dropdown-item(type="button") Brasil
-                button.dropdown-item(type="button") Canada(EN)
-                button.dropdown-item(type="button") Canada(FR)
-                button.dropdown-item(type="button") Deutschland
-                button.dropdown-item(type="button") Espana
-                button.dropdown-item(type="button") France
-                button.dropdown-item(type="button") Hong Kong
-                button.dropdown-item(type="button") Ireland
-                button.dropdown-item(type="button") Italia
-                button.dropdown-item(type="button") Nederland
-                button.dropdown-item(type="button") New Zealand
-                button.dropdown-item(type="button") Portugal
-                button.dropdown-item(type="button") Singapore
-                button.dropdown-item(type="button") United Kingdom
-                button.dropdown-item(type="button") United States
+            .form-group
+              select.form-control(name="region")
+                option(selected="selected") United States
+                option(value="") Argentina
+                option(value="") Australia
+                option(value="") Brasil
+                option(value="") Canada(EN)
+                option(value="") Canada(FR)
+                option(value="") Deutschland
+                option(value="") Espana
+                option(value="") France
+                option(value="") Hong Kong
+                option(value="") Ireland
+                option(value="") Italia
+                option(value="") Nederland
+                option(value="") New Zealand
+                option(value="") Portugal
+                option(value="") Singapore
+                option(value="") United Kingdom
+                option(value="") United States
       .text-border
         .text-copyright @2017 DahamLeee
         

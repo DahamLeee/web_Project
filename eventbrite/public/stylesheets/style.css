@@ -23,6 +23,10 @@ body{
   padding-right : 5px;
 }
 
+ul li:hover .dropdown-menu{
+  display: block;
+}
+
 /*Search Bar*/
 .search-event{
     text-align: center;
@@ -99,10 +103,23 @@ body{
 .background-image{
   height: 220px;
   width: 100%;
+  overflow: hidden;
 }
 .category-card__label{
   color: white;
   font-weight: 600;
+}
+/*category hover*/
+figure.effect-lily p {
+	color: rgba(255,255,255, 0.9);
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+	transition: opacity 0.2s, transform 0.35s;
+}
+
+figure.effect-lily:hover img,
+figure.effect-lily:hover p {
+	opacity: 1;
 }
 
 
@@ -140,7 +157,7 @@ body{
   color: #D2D6DF;
   font-size: 14px;
   line-height: 18px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .footer-links > li{
   color: #D2D6DF;
@@ -173,15 +190,16 @@ body{
   padding-left: 15px;
 }
 .footer-corps{
-  margin-top: 20px;
+  margin-top: 40px;
   border-top: 1px solid #363A43;
   border-bottom: 1px solid #363A43;
   text-align: center;
 }
-.btn-third{
+.region-selector .form-group select{
+  width: 240px;
   background: #282C35;
   color: #D2D6DF;
-  border: .3px solid #D2D6DF;
+  border: .4px solid #D2D6DF;
 }
 .text-border{
   padding-top: 25px;
