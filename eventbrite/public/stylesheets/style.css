@@ -52,7 +52,7 @@ ul li:hover .dropdown-menu{
   font-size: 45px;
 }
 
-.search-event > div.card-body > .show{
+.search-event > div.card-body > .container{
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 10px;

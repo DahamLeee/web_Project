@@ -12,5 +12,3 @@ $(function($){
   }, 3500);
 
 });
-
-$('body').scroll({ target: '#region'})

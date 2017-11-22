@@ -19,6 +19,21 @@ router.get('/create', needAuth, catchErrors(async (req, res, next) => {
   res.render('parties/create', {party:{}});
 }));
 
-
+/*event 만들기*/
+router.post('/', needAuth, catchErrors(async (req, res, next) => {
+  const user = req.user;
+  var party = new Party({
+    title: req.body.title,
+    author: user._id,
+    location: req.body.location,
+    description: req.body.description,
+    organizerName: req.body.organizerName,
+    organizerDescription: req.body.organizerDescription,
+    price: req.body.price,
+  });
+  await party.save();
+  req.flash('success', 'Successfully posted');
+  res.redirect('/');
+}));
 
 module.exports = router;

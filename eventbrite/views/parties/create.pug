@@ -3,83 +3,11 @@ extends ../layout
 block hero-unit
   
 block content
-  .container
-    form.form-create(action="/parties", method="POST", id="create")
-      .event_details_wrapper
-        h2.main-title 1. Event Details
-        .form-group
-          label(for="title") EVENT TITLE
-          input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=party.title)
-        .form-group
-          label(for="location") LOCATION
-          input.form-control(type="text", name="location", placeholder="Search for a venue or address.", value=party.location)
-        .form-group
-          label(for="description") EVENT DESCRIPTION
-          textarea.form-control(name="description", rows="5")= party.description
-        .form-group
-          label(for="organizerName") ORGANIZER NAME
-          input.form-control(type="text", name="organizerName", placeholder="Who's organizing this event?", value=party.organizerName)
-        .form-group
-          label(for="organizerDescription") ORGANIZER DESCRIPTION
-          textarea.form-control(name="organizerDescription", rows="3")= party.organizerDescription
-        
-      .event_tickets_wrapper
-        h2.main-title 2. Create Tickets
-        p What type of ticket would you like to start with?
-        
-      .event_ceategories_wrapper
-        h2.main-title 3. Additional Settings
-        .form-group
-          label(for="type") EVENT TYPE
-          select.form-control(name="type")
-            option(selected="selected") Select the type of event
-            option(value="") Appearance or Signing
-            option(value="") Attraction
-            option(value="") Camp, Trip, or Retreat
-            option(value="") Class, Training, or Workshop
-            option(value="") Concert or Performance
-            option(value="") Conference
-            option(value="") Convention
-            option(value="") Dinner or Gala
-            option(value="") Festival or Fair
-            option(value="") Game or Competition
-            option(value="") Meeting or Networking Event
-            option(value="") Other
-            option(value="") Party or Social Gathering
-            option(value="") Race or Endurance Event
-            option(value="") Rally
-            option(value="") Screening
-            option(value="") Seminar or Talk
-            option(value="") Tour
-            option(value="") Tournament
-            option(value="") Tradeshow, Consumer Show, or Expo
-        .form-group
-          label(for="topic") EVENT TOPIC
-          select.form-control(name="topic")
-            option(selected="selected") Select a topic
-            option(value="") Auto, Boat & Air
-            option(value="") Business & Professional
-            option(value="") Charity & Causes
-            option(value="") Community & Cultuer
-            option(value="") Family & Education
-            option(value="") Fashion & Beauty
-            option(value="") Film, Media & Entertainment
-            option(value="") Food & Drink
-            option(value="") Government & Politics
-            option(value="") Health & Wellness
-            option(value="") Hobbies & Special Interest
-            option(value="") Home & Lifestyle
-            option(value="") Music
-            option(value="") Other
-            option(value="") Performing & Visual Arts
-            option(value="") Religion & Spirituality
-            option(value="") School Activities
-            option(value="") Science & Technology
-            option(value="") Seasonal & Holiday
-            option(value="") Sports & Fitness
-            option(value="") Travel & Outdoor
-            
-            
+  .event-content
+    .container
+      form.form-create(action="/parties", method="POST")
+        include _form
+        button.btn.btn-outline-primary(type="submit") Save Your Event          
 
 block category
   
@@ -119,7 +47,7 @@ block footer
               li
                 a.text-body-small(href="#") Cookies
                 
-            .dropdown.region-selector.col-sm-12.col-md-4.col-lg-2.justify-content-center
+            .dropdown.region-selector.col-sm-12.col-md-4.col-lg-2
               .form-group
                 select.form-control(name="region")
                   option(selected="selected") United States

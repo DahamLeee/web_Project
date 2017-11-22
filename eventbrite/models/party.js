@@ -11,8 +11,9 @@ var schema = new Schema({
   description: {type: String, trim: true,},
   organizerName: {type: String, trim: true},
   organizerDescription: {type: String, trim: true},
-  type: {type:String, trim: true},
-  topic: {type:String, trim: true}
+  price: {type: String, trim: true}
+  //type: {type:String, trim: true},
+  //topic: {type:String, trim: true}
 }, {
   toJSON: {virtuals: true},
   toObject: {virtuals: true}

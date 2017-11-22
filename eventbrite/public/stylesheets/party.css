@@ -1,9 +1,17 @@
+.event-content{
+  margin-top: 4em;
+  margin-bottom: 5em;
+}
 .main-title{
   margin-top: 10px;
   margin-bottom: 10px;
   color: #666a73;
   height: 50px;
   border-bottom: solid .5px #666a73;
+}
+
+.event_details_wrapper, .event_tickets_wrapper, .event_ceategories_wrapper{
+  margin-bottom: 20px;
 }
 
 .form-create label{
@@ -18,11 +26,30 @@
 }
 
 .event_tickets_wrapper p{
+  margin-top: 5em;
   text-align: center;
 }
 
-.event_ceategories_wrapper{
-  margin-bottom: 70px;
+.event_tickets_wrapper .button-group{
+  text-align: center;
+}
+
+.event_tickets_wrapper .form-group{
+  width: 30%;
+}
+
+.event_tickets_wrapper .ticket{
+  border: solid 2px #0278b8;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.event_tickets_wrapper .ticket a i{
+  color: #0278b8;
+  font-weight: bold;
+}
+.event_tickets_wrapper .button-group.hide{
+  display: none;
 }
 
 .event_ceategories_wrapper .form-group{
