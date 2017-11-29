@@ -1,6 +1,10 @@
 body{
-  font-family: "Benton Sans"
+  font-family: "Benton Sans,Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif"
 }
+.row{
+  margin-top: 3em;
+}
+
 .btn-mine{
   background-color: #F86820;
   border-color: #F86820;
@@ -35,7 +39,7 @@ ul li:hover .dropdown-menu{
     margin-top: -140px;
     padding-top: 25px;
     padding-bottom: 25px;
-    width: 80%;
+    width: 100%;
 }
 
 .search-event > div.card-body{

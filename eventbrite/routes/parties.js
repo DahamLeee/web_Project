@@ -14,6 +14,20 @@ function needAuth(req, res, next) {
   }
 }
 
+router.get('/', catchErrors(async (req, res, next) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.page) || 10;
+
+  var query = {};
+
+  const parties = await Party.paginate(query, {
+    sort: {createAt: -1},
+    populate: 'author',
+    page: page, limit: limit
+  });
+  res.render('parties/index', {parties: parties});
+}))
+
 router.get('/create', needAuth, catchErrors(async (req, res, next) => {
   const users = await User.find({});
   res.render('parties/create', {party:{}});

@@ -1,0 +1,21 @@
+.card.col-sm-12.col-md-6.col-lg-4.event-card
+  a(href="#")
+    .poster-card__header
+      .poster-card__image
+        img.card-img-top(src="./images/IU.jpg", alt="event")
+        span.poster-card__label= party.price
+    
+    .card-body
+      .poster-card__date SAT.OCT 7 10:00 PM
+      p.poster-card__title= party.title
+      .poster-card__venue= party.location
+      
+  .poster-card__footer
+    .poster-card__tags
+      a.event-category(href="#") category
+      a.event-format(href="#") format
+    .poster-card__actions
+      a.share-action(href="#")
+        i.fa.fa-share(aria-hidden="true")
+      a.bookmark(href="#")
+        i.fa.fa-bookmark-o(aria-hidden="true")
