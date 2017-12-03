@@ -44,7 +44,7 @@
   margin-right: 5px;
 }
 
-.event_tickets_wrapper .ticket a i{
+.event_tickets_wrapper .ticket i{
   color: #0278b8;
   font-weight: bold;
 }
@@ -54,4 +54,8 @@
 
 .event_ceategories_wrapper .form-group{
   width: 50%;
+}
+
+.event-description{
+  margin-bottom: 15px;
 }

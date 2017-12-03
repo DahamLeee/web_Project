@@ -29,9 +29,28 @@ router.get('/', catchErrors(async (req, res, next) => {
 }))
 
 router.get('/create', needAuth, catchErrors(async (req, res, next) => {
-  const users = await User.find({});
   res.render('parties/create', {party:{}});
 }));
+
+router.get('/:id', catchErrors(async (req, res, next) => {
+  const party = await Party.findById(req.params.id).populate('author');
+
+  await party.save();
+  res.render('parties/show', {party: party});
+}));
+
+/*edit
+router.post('/:id', catchErrors(async (req, res, next) => {
+  const party = await Party.findById(req.params.id);
+
+  if (!party) {
+    req.flash('danger', 'Not exist event');
+    return res.redirect('back');
+  }
+  party.title = req.body.title;
+  party.content = req.body.title;
+}));*/
+
 
 /*event 만들기*/
 router.post('/', needAuth, catchErrors(async (req, res, next) => {

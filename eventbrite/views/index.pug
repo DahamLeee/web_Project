@@ -31,7 +31,8 @@ block content
     .container            
       .row  
         if parties.total <= 0
-          p no eventcard
+          p There are no events. Please register event!
         else
           each party in parties.docs
-            include ./includes/eventcard
+            a(href=`/parties/${party.id}`)
+              include ./includes/eventcard

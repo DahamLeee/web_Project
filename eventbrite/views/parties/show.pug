@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title= party.title
+    include _party
+    .row
+      .col.col-md-10
+      |
+      .col.col-md-2
+        .buttons
+          if currentUser && party.author.id == currentUser.id || currentUser && currentUser.id == "5a23949258094b2b1cc998ca"
+            |
+            a.btn.btn-outline-secondary(href="#") Edit
+            |
+            a.btn.btn-outline-danger.need-confirm-btn(href="#") Delete
+  
+block category

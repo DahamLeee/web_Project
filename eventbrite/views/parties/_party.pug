@@ -1,0 +1,27 @@
+.content
+  .row
+    .col.col-md-7
+      img.card-img-top(src="../images/IU.jpg", alt="alt")
+    .col.col-md-1
+      
+    .col.col-md-4  
+      p= party.location
+      p= party.price
+
+    .col.col-md-12
+      a.share-action(href="#")
+        i.fa.fa-share(aria-hidden="true")
+      a.bookmark(href="#")
+        i.fa.fa-bookmark-o(aria-hidden="true")
+
+  .row
+    .col.col-md-1
+    |
+    .col.col-md-7
+      .event-description
+        p DESCRIPTION
+        p= party.description
+      
+      .event-tags
+        span party-topic, party-type
+    .col.col-md-4

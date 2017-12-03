@@ -2,11 +2,16 @@ extends ../layout
 
 block content
   .container.popular-events
+    h1.main-title
+      | Events
+    
     .row
       if parties.total <= 0
         p There are no events. Please register event!
       else
+        |
         each party in parties.docs
-          include ../includes/eventcard
+          a(href=`/parties/${party.id}`)
+            include ../includes/eventcard
 
 block category

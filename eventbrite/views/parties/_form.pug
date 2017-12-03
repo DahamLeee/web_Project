@@ -7,6 +7,12 @@
     label(for="location") LOCATION (*)
     input.form-control(type="text", name="location", placeholder="Search for a venue or address.", value=party.location)
   .form-group
+    label(for="starts") START
+    input.form-control(type="date",id="starts", name="starts", value=party.starts)
+  .form-group
+    label(for="ends") END
+    input.form-control(type="date",id="ends" name="ends", value=party.ends)
+  .form-group
     label(for="description") EVENT DESCRIPTION
     textarea.form-control(name="description", rows="5")= party.description
   .form-group
@@ -21,64 +27,62 @@
   p What type of ticket would you like to start with?
   .button-group
     button.btn.btn-light.ticket.free-ticket(type="button")
-      a(href="#")
-        |
-        i.fa.fa-plus-circle  FREE TICKET
+      i.fa.fa-plus-circle  FREE TICKET
     button.btn.btn-light.ticket.paid-ticket(type="button")
-      a(href="#")
-        |  
-        i.fa.fa-plus-circle  PAID TICEKT
-  .form-group
+      i.fa.fa-plus-circle  PAID TICEKT
+  .form-group.price-text.hide
     label(for="price") PRICE
     input.form-control(type="text", name="price", value=party.price, placeholder="ex)Free, $1")
 .event_ceategories_wrapper
   h2.main-title 3. Additional Settings
   .form-group
     label(for="type") EVENT TYPE
-    select.form-control(name="type")
-      option(selected="selected") Select the type of event
-      option(value="") Appearance or Signing
-      option(value="") Attraction
-      option(value="") Camp, Trip, or Retreat
-      option(value="") Class, Training, or Workshop
-      option(value="") Concert or Performance
-      option(value="") Conference
-      option(value="") Convention
-      option(value="") Dinner or Gala
-      option(value="") Festival or Fair
-      option(value="") Game or Competition
-      option(value="") Meeting or Networking Event
-      option(value="") Other
-      option(value="") Party or Social Gathering
-      option(value="") Race or Endurance Event
-      option(value="") Rally
-      option(value="") Screening
-      option(value="") Seminar or Talk
-      option(value="") Tour
-      option(value="") Tournament
-      option(value="") Tradeshow, Consumer Show, or Expo
+      .list
+        select.form-control(name="type", class="type")
+          option(selected="selected") Select the type of event
+          option(value="1") Appearance or Signing
+          option(value="2") Attraction
+          option(value="3") Camp, Trip, or Retreat
+          option(value="4") Class, Training, or Workshop
+          option(value="5") Concert or Performance
+          option(value="6") Conference
+          option(value="7") Convention
+          option(value="8") Dinner or Gala
+          option(value="9") Festival or Fair
+          option(value="10") Game or Competition
+          option(value="11") Meeting or Networking Event
+          option(value="12") Other
+          option(value="13") Party or Social Gathering
+          option(value="14") Race or Endurance Event
+          option(value="15") Rally
+          option(value="16") Screening
+          option(value="17") Seminar or Talk
+          option(value="18") Tour
+          option(value="19") Tournament
+          option(value="20") Tradeshow, Consumer Show, or Expo
   .form-group
     label(for="topic") EVENT TOPIC
-    select.form-control(name="topic")
-      option(selected="selected") Select a topic
-      option(value="") Auto, Boat & Air
-      option(value="") Business & Professional
-      option(value="") Charity & Causes
-      option(value="") Community & Cultuer
-      option(value="") Family & Education
-      option(value="") Fashion & Beauty
-      option(value="") Film, Media & Entertainment
-      option(value="") Food & Drink
-      option(value="") Government & Politics
-      option(value="") Health & Wellness
-      option(value="") Hobbies & Special Interest
-      option(value="") Home & Lifestyle
-      option(value="") Music
-      option(value="") Other
-      option(value="") Performing & Visual Arts
-      option(value="") Religion & Spirituality
-      option(value="") School Activities
-      option(value="") Science & Technology
-      option(value="") Seasonal & Holiday
-      option(value="") Sports & Fitness
-      option(value="") Travel & Outdoor
+    .list
+      select.form-control(name="topic", class="topic")
+        option(selected="selected") Select a topic
+        option(value="") Auto, Boat & Air
+        option(value="") Business & Professional
+        option(value="") Charity & Causes
+        option(value="") Community & Cultuer
+        option(value="") Family & Education
+        option(value="") Fashion & Beauty
+        option(value="") Film, Media & Entertainment
+        option(value="") Food & Drink
+        option(value="") Government & Politics
+        option(value="") Health & Wellness
+        option(value="") Hobbies & Special Interest
+        option(value="") Home & Lifestyle
+        option(value="") Music
+        option(value="") Other
+        option(value="") Performing & Visual Arts
+        option(value="") Religion & Spirituality
+        option(value="") School Activities
+        option(value="") Science & Technology
+        option(value="") Seasonal & Holiday
+        option(value="") Sports & Fitness
+        option(value="") Travel & Outdoor
