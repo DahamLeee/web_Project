@@ -24,15 +24,15 @@
   
 .event_tickets_wrapper
   h2.main-title 2. Create Tickets
-  p What type of ticket would you like to start with?
   .button-group
+    p What type of ticket would you like to start with?
     button.btn.btn-light.ticket.free-ticket(type="button")
       i.fa.fa-plus-circle  FREE TICKET
     button.btn.btn-light.ticket.paid-ticket(type="button")
       i.fa.fa-plus-circle  PAID TICEKT
   .form-group.price-text.hide
     label(for="price") PRICE
-    input.form-control(type="text", name="price", value=party.price, placeholder="ex)Free, $1")
+    input.form-control(type="text", name="price", value=party.price, placeholder="ex)$1, 1000원")
 .event_ceategories_wrapper
   h2.main-title 3. Additional Settings
   .form-group

@@ -7,12 +7,12 @@ var router = express.Router();
 router.get('/', catchErrors(async (req, res, next) =>{
 
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.page) || 10;
+  const limit = parseInt(req.query.page) || 15;
 
   var query = {};
 
   const parties = await Party.paginate(query, {
-    sort: {createdAt: -1},
+    sort: {createAt: -1},
     populate: 'author',
     page: page, limit: limit
   });
