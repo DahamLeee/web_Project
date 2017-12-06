@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  .container
+  .container.detail_content  
     h1.main-title= party.title
     include _party
     .row
@@ -11,8 +11,8 @@ block content
         .buttons
           if currentUser && party.author.id == currentUser.id || currentUser && currentUser.id == "5a23949258094b2b1cc998ca"
             |
-            a.btn.btn-outline-secondary(href="#") Edit
+            a.btn.btn-outline-secondary(href=`/parties/${party.id}/edit`) Edit
             |
-            a.btn.btn-outline-danger.need-confirm-btn(href="#") Delete
+            a.btn.btn-outline-danger.need-confirm-btn(href=`/parties/${party.id}?_method=delete`) Delete
   
 block category

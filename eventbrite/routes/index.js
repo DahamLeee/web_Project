@@ -12,7 +12,7 @@ router.get('/', catchErrors(async (req, res, next) =>{
   var query = {};
 
   const parties = await Party.paginate(query, {
-    sort: {createAt: -1},
+    sort: {createdAt: -1},
     populate: 'author',
     page: page, limit: limit
   });

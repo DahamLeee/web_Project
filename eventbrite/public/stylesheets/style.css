@@ -12,7 +12,9 @@ body{
   color: #fff;
 }
 
-
+.register:hover{
+  color: #fff;
+}
 /*navbar*/
 .navbar > .nav-header > .navbar-brand{
   font-size: 1.5rem;

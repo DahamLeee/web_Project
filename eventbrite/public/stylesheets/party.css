@@ -9,6 +9,17 @@
   height: 50px;
   border-bottom: solid .5px #666a73;
 }
+.sub-title{
+  color: #666a73;
+  font-size: 20px;
+}
+
+.detail_content{
+  margin-top: 15px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px 10px #888888;
+  margin-bottom: 15px;
+}
 
 .event_details_wrapper, .event_tickets_wrapper, .event_ceategories_wrapper{
   margin-bottom: 20px;

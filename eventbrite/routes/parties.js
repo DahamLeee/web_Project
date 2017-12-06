@@ -14,6 +14,8 @@ function needAuth(req, res, next) {
   }
 }
 
+
+
 router.get('/', catchErrors(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.page) || 10;
@@ -29,8 +31,13 @@ router.get('/', catchErrors(async (req, res, next) => {
 }))
 
 router.get('/create', needAuth, catchErrors(async (req, res, next) => {
-  res.render('parties/create', {party:{}});
+  res.render('parties/create', {party:{}, type: Party.EVENT_TYPES});
 }));
+
+router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
+  const party = await Party.findById(req.params.id);
+  res.render('parties/edit', {party: party});
+}))
 
 router.get('/:id', catchErrors(async (req, res, next) => {
   const party = await Party.findById(req.params.id).populate('author');
@@ -39,7 +46,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
   res.render('parties/show', {party: party});
 }));
 
-/*edit
+
 router.post('/:id', catchErrors(async (req, res, next) => {
   const party = await Party.findById(req.params.id);
 
@@ -48,9 +55,27 @@ router.post('/:id', catchErrors(async (req, res, next) => {
     return res.redirect('back');
   }
   party.title = req.body.title;
-  party.content = req.body.title;
-}));*/
+  party.location = req.body.location;
+  party.starts = req.body.starts;
+  party.ends = req.body.ends;
+  party.description = req.body.description;
+  party.organizerName = req.body.organizerName;
+  party.organizerDescription = req.body.organizerDescription;
+  party.price = req.body.price;
+  party.type = req.body.type;
+  party.topic = req.body.price;
 
+  await party.save();
+  req.flash('success', 'Successfully updated');
+  res.redirect('/parties');
+
+}));
+
+router.delete('/:id', needAuth, catchErrors(async (req, res, next) =>{
+  await Party.findOneAndRemove({_id: req.params.id});
+  req.flash('success', 'Successfully deleted');
+  res.redirect('/parties');
+}));
 
 /*event 만들기*/
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
@@ -58,11 +83,15 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
   var party = new Party({
     title: req.body.title,
     author: user._id,
+    starts: req.body.starts,
+    ends: req.body.ends,
     location: req.body.location,
     description: req.body.description,
     organizerName: req.body.organizerName,
     organizerDescription: req.body.organizerDescription,
-    price: req.body.price,
+    type: req.body.type,
+    topic: req.body.topic,
+    price: req.body.price
   });
   await party.save();
   req.flash('success', 'Successfully posted');

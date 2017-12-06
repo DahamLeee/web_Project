@@ -1,27 +1,34 @@
 .content
   .row
-    .col.col-md-7
+    .col.col-md-8
       img.card-img-top(src="../images/IU.jpg", alt="alt")
-    .col.col-md-1
-      
-    .col.col-md-4  
-      p= party.location
-      p= party.price
-
-    .col.col-md-12
-      a.share-action(href="#")
-        i.fa.fa-share(aria-hidden="true")
-      a.bookmark(href="#")
-        i.fa.fa-bookmark-o(aria-hidden="true")
-
+    .col.col-md-3
+      .event-time
+        .sub-title STARTS
+        =moment(party.starts).format('YYYY-MM-DD : HH:mm')
+        .sub-title ENDS
+        =moment(party.ends).format('YYYY-MM-DD : HH:mm')
+        p
+        |
+      .sub-title PRICE
+      | 
+      =party.price
+    
   .row
-    .col.col-md-1
-    |
-    .col.col-md-7
+    .col.col-md-8
+      .event-location
+        .sub-title LOCATION
+        p= party.location
+  
       .event-description
-        p DESCRIPTION
+        .sub-title EVENT DESCRIPTION
         p= party.description
-      
+    .col.col-md-3
+      .event-organizer
+        .sub-title ORGANIZER NAME
+        p= party.organizerName
+        .sub-title ORGANIZER DESCRIPTION
+        p= party.organizerDescription
+  .row
+    .col.col-md-12
       .event-tags
-        span party-topic, party-type
-    .col.col-md-4

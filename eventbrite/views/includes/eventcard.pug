@@ -5,7 +5,7 @@
       span.poster-card__label= party.price
   
   .card-body
-    .poster-card__date SAT.OCT 7 10:00 PM
+    .poster-card__date= moment(parties.starts).format('YYYY-MM-DD')
     p.poster-card__title= party.title
     .poster-card__venue= party.location
       

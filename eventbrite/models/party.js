@@ -6,14 +6,14 @@ var schema = new Schema({
   author: {type: Schema.Types.ObjectId, ref: 'User'},
   title: {type: String, trim: true, required: true},
   location: {type: String, trim: true, required: true},
-  //starts: {type: Date, format:'YYYY-MM-DD'},
-  //ends: {type: Date, format:'YYYY-MM-DD'},
+  starts: {type: Date, format:'YYYY-MM-DD'},
+  ends: {type: Date, format:'YYYY-MM-DD'},
   description: {type: String, trim: true,},
   organizerName: {type: String, trim: true},
   organizerDescription: {type: String, trim: true},
   price: {type: String, trim: true},
-  //type: {type:String, trim: true},
-  //topic: {type:String, trim: true},
+  type: {type:String, trim: true},
+  topic: {type:String, trim: true},
   createAt: {type: Date, default: Date.now}
 }, {
   toJSON: {virtuals: true},
@@ -22,7 +22,7 @@ var schema = new Schema({
 
 schema.plugin(mongoosePaginate);
 var Party = mongoose.model('Party', schema);
-/*
+
 schema.statics.EVENT_TYPES = [
   {key:'1', value: 'Appearance or Signing'},
   {key:'2', value: 'Attraction'},
@@ -45,9 +45,9 @@ schema.statics.EVENT_TYPES = [
   {key:'19', value: 'Tournament'},
   {key:'20', value: 'Tradeshow, Consumer Show, or Expo'},
 ]
-
+/*
 schema.statics.EVENT_TOPICS = [
   {key:'1', value: ''}
-]
-*/
+]*/
+
 module.exports = Party;
