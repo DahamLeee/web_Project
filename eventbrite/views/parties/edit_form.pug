@@ -8,10 +8,10 @@
     input.form-control(type="text", name="location", placeholder="Search for a venue or address.", value=party.location)
   .form-group
     label(for="starts") START
-    input.form-control(type="date",id="starts", name="starts", value=party.starts)
+    input.form-control(type="date",id="starts", name="starts", value=moment(party.starts).format('YYYY-MM-DD'))
   .form-group
     label(for="ends") END
-    input.form-control(type="date",id="ends" name="ends", value=party.ends)
+    input.form-control(type="date",id="ends" name="ends", value=moment(party.ends).format('YYYY-MM-DD'))
   .form-group
     label(for="description") EVENT DESCRIPTION
     textarea.form-control(name="description", rows="5")= party.description
@@ -38,8 +38,9 @@
   .form-group
     label(for="type") EVENT TYPE
       .list
-        select.form-control(name="type", class="type")
-          option(selected value="Select") Select the type of event
+        select.form-control(name="type", class="type" party.type)
+          option(selected value=party.type)
+            =party.type
           option(value="Appearance or Signing") Appearance or Signing
           option(value="Attraction") Attraction
           option(value="Camp, Trip, or Retreat") Camp, Trip, or Retreat
@@ -63,26 +64,27 @@
   .form-group
     label(for="topic") EVENT TOPIC
       .list
-        select.form-control(name="topic", class="topic")
-          option(selected="selected") Select a topic
-          option(value="Auto, Boat & Air") Auto, Boat & Air
-          option(value="Business & Professional") Business & Professional
-          option(value="Charity & Causes") Charity & Causes
-          option(value="Community & Cultuer") Community & Cultuer
-          option(value="Family & Education") Family & Education
-          option(value="Fashion & Beauty") Fashion & Beauty
-          option(value="Film, Media & Entertainment") Film, Media & Entertainment
-          option(value="Food & Drink") Food & Drink
-          option(value="Government & Politics") Government & Politics
-          option(value="Health & Wellness") Health & Wellness
-          option(value="Hobbies & Special Interest") Hobbies & Special Interest
-          option(value="Home & Lifestyle") Home & Lifestyle
-          option(value="Music") Music
-          option(value="Other") Other
-          option(value="Performing & Visual Arts") Performing & Visual Arts
-          option(value="Religion & Spirituality") Religion & Spirituality
-          option(value="School Activities") School Activities
-          option(value="Science & Technology") Science & Technology
-          option(value="Seasonal & Holiday") Seasonal & Holiday
-          option(value="Sports & Fitness") Sports & Fitness
-          option(value="Travel & Outdoor") Travel & Outdoor
+      select.form-control(name="topic", class="topic" party.topic)
+        option(selected value=party.topic)
+          =party.topic
+        option(value="Auto, Boat & Air") Auto, Boat & Air
+        option(value="Business & Professional") Business & Professional
+        option(value="Charity & Causes") Charity & Causes
+        option(value="Community & Cultuer") Community & Cultuer
+        option(value="Family & Education") Family & Education
+        option(value="Fashion & Beauty") Fashion & Beauty
+        option(value="Film, Media & Entertainment") Film, Media & Entertainment
+        option(value="Food & Drink") Food & Drink
+        option(value="Government & Politics") Government & Politics
+        option(value="Health & Wellness") Health & Wellness
+        option(value="Hobbies & Special Interest") Hobbies & Special Interest
+        option(value="Home & Lifestyle") Home & Lifestyle
+        option(value="Music") Music
+        option(value="Other") Other
+        option(value="Performing & Visual Arts") Performing & Visual Arts
+        option(value="Religion & Spirituality") Religion & Spirituality
+        option(value="School Activities") School Activities
+        option(value="Science & Technology") Science & Technology
+        option(value="Seasonal & Holiday") Seasonal & Holiday
+        option(value="Sports & Fitness") Sports & Fitness
+        option(value="Travel & Outdoor") Travel & Outdoor

@@ -31,7 +31,7 @@ router.get('/', catchErrors(async (req, res, next) => {
 }))
 
 router.get('/create', needAuth, catchErrors(async (req, res, next) => {
-  res.render('parties/create', {party:{}, type: Party.EVENT_TYPES});
+  res.render('parties/create', {party:{}});
 }));
 
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
@@ -63,7 +63,7 @@ router.post('/:id', catchErrors(async (req, res, next) => {
   party.organizerDescription = req.body.organizerDescription;
   party.price = req.body.price;
   party.type = req.body.type;
-  party.topic = req.body.price;
+  party.topic = req.body.topic;
 
   await party.save();
   req.flash('success', 'Successfully updated');

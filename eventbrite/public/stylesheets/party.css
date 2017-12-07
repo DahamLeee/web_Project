@@ -32,8 +32,12 @@
   color: #282C35
 }
 
-.event_details_wrapper .form-group{
+.event_details_wrapper .form-group, .edit_wrapper .form-group{
   width: 70%;
+}
+
+.event_details_wrapper #starts, .event_details_wrapper #ends{
+  width: 35%;
 }
 
 .event_tickets_wrapper p{

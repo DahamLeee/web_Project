@@ -51,26 +51,49 @@ router.get('/signup', (req, res, next) => {
   res.render('users/signup', {messages: req.flash()});
 });
 
-/*
-이거는 그냥 단순히 edit를 눌렀을 때 users/edit로 render를 시켜주는 router인거임
-router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
 
+router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+  res.render('users/edit', {user: user});
 }))
-*/
+
 
 /* 여기서 put 메소드는 뭐를 하는것일까?
 edit를 하기위한 route인거 같다. edit.pug에서 form의 action:이 method put으로 가게 코딩되어있음
+*/
 router.put('/:id', needAuth, catchErrors(async (req, res, next) => {
+  const err = validateForm(req.body);
+  if (err) {
+    req.flash('danger', err);
+    return res.redirect('back');
+  }
 
+  const user = await User.findById({_id: req.params.id});
+  if (!user) {
+    req.flash('danger', 'Not exist user.');
+    return res.redirect('back');
+  }
+
+  if(!await user.validatePassword(req.body.current_password)){
+    req.flash('danger', 'Current password invalid.');
+    return res.redirect('back');
+  }
+
+  user.name = req.body.name;
+  user.email = req.body.email;
+  if (req.body.password){
+    user.password = await user.generateHash(req.body.password);
+  }
+  await user.save();
+  req.flash('success', 'Updated successfully');
+  res.redirect('/users');
 }))
-*/
 
-/*
-사용자의 id를 get했을때 사용자의 id값을 찾고 맞다면 res.render로 어느 페이지로 갈지 설정해줌
-router.get('/:id', catchErrors(async (req, res, next) => {
-
+router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
+  const user = await User.findOneAndRemove({_id: req.params.id});
+  req.flash('success', 'Deleted successfully.');
+  res.redirect('/users');
 }))
-*/
 
 //signup ,, id만들기
 router.post('/', catchErrors(async(req, res, next) => {
@@ -91,7 +114,7 @@ router.post('/', catchErrors(async(req, res, next) => {
   });
   user.password = await user.generateHash(req.body.password);
   await user.save();
-  req.flash('success', 'Registered succesfully. Please sign in.');
+  req.flash('success', 'Registered successfully. Please sign in.');
   res.redirect('/');
 }));
 

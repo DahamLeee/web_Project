@@ -79,6 +79,6 @@
 }
 .poster-card, .poster-card-body, .poster-card__venue, .poster-card__title, .poster-card__tags{
   text-overflow: ellipsis;
-  overflow: visible;
+  overflow: hidden;
   white-space: nowrap;
 }

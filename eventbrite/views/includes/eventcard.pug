@@ -11,8 +11,10 @@
       
   .poster-card__footer
     .poster-card__tags
-      a.event-category(href="#") type
-      a.event-format(href="#") format
+      a.event-category(href="#") #
+        = party.type
+      a.event-format(href="#") #
+        = party.topic
     .poster-card__actions
       a.share-action(href="#")
         i.fa.fa-share(aria-hidden="true")
