@@ -1,0 +1,11 @@
+.attend.card
+  .card-body
+    .content= attend.content
+  .row.card-body
+    .col-sm
+    .col-sm.text-right
+      .author
+        | answered on #{moment(attend.createAt).format('YYYY-MM-DD')}
+        if (attend.author)
+          |
+          | by #[a(href=`/users/${attend.author.id}`)= attend.author.name]

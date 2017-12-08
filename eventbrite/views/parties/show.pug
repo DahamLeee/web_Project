@@ -14,5 +14,18 @@ block content
             a.btn.btn-outline-secondary(href=`/parties/${party.id}/edit`) Edit
             |
             a.btn.btn-outline-danger.need-confirm-btn(href=`/parties/${party.id}?_method=delete`) Delete
-  
+      |
+    if party.numAttends > 0
+      hr
+      h3 #{party.numAttends} Attender(s)
+      .attenders.show
+        each attend in attends
+          include _attend
+    
+    form(action=`/parties/${party.id}/attends`, method='POST')
+      .form-group
+        label.sub-title(for='attend') Attend List
+        p If you want to register this event, please wirte a comment.
+        textarea.form-control(name="content", rows="3")
+      button.btn.btn-outline-primary.need-attend-btn(type="submit") Register
 block category

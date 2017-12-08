@@ -36,8 +36,11 @@
   width: 70%;
 }
 
-.event_details_wrapper #starts, .event_details_wrapper #ends{
+.event_details_wrapper #starts, .event_details_wrapper #ends, .event_details_wrapper .startM, .event_details_wrapper .endM{
   width: 35%;
+}
+label[for="startM"], label[for="endM"]{
+  display: none;
 }
 
 .event_tickets_wrapper p{
@@ -73,4 +76,9 @@
 
 .event-description{
   margin-bottom: 15px;
+}
+
+/*party show css*/
+.party_content{
+  border-bottom: solid .5px #666a73;
 }

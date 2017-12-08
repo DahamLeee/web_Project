@@ -10,4 +10,10 @@ $(function($){
     $(".event_tickets_wrapper .price-text input").val("");
 
   })
-})
+  $(".need-attend-btn").click(function() {
+    if (confirm('Are you sure to register?')) {
+      return true;
+    }
+    return false;
+  });
+});

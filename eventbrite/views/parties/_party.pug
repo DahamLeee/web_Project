@@ -1,13 +1,15 @@
-.content
-  .row
+.party_content
+  .row.party_header
     .col.col-md-8
       img.card-img-top(src="../images/IU.jpg", alt="alt")
     .col.col-md-3
       .event-time
         .sub-title STARTS
-        =moment(party.starts).format('YYYY-MM-DD : HH:mm')
+        =moment(party.starts).format('YYYY-MM-DD ') 
+        =(party.startM)
         .sub-title ENDS
-        =moment(party.ends).format('YYYY-MM-DD : HH:mm')
+        =moment(party.ends).format('YYYY-MM-DD ') 
+        =(party.endM)
         p
         |
       .sub-title PRICE
