@@ -31,7 +31,7 @@
             .dropdown-menu(aria-labelledby='profile')
               if (currentUser.id == "5a23949258094b2b1cc998ca")
                 a.dropdown-item(href='/users') Users
-              a.dropdown-item(href='#') Account Settings
+              a.dropdown-item(href=`/users/${currentUser.id}`) Account Settings
               a.dropdown-item(href='/signout') Signout
         li.nav-item
           a#createEvent.nav-link(href='/parties/create') CREATE EVENT

@@ -6,6 +6,7 @@ var schema = new Schema({
   email: {type: String, required: true, index: true, unique: true, trim:true},
   name: {type: String, required: true, trim: true},
   password: {type: String},
+  admin: {type:Boolean, default: false},
   facebook: {id: String, token: String, photo: String},
   createAt: {type: Date, default: Date.now}
 },{
