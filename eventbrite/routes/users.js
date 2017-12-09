@@ -97,7 +97,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
 router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
   const user = await User.findOneAndRemove({_id: req.params.id});
   req.flash('success', 'Deleted successfully.');
-  res.redirect('/users');
+  res.redirect('/');
 }))
 
 //signup ,, id만들기
