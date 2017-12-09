@@ -27,7 +27,7 @@ function validateForm(form){
 
 router.get('/', catchErrors(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.page) || 10;
+  const limit = parseInt(req.query.page) || 100;
 
   var query = {};
 

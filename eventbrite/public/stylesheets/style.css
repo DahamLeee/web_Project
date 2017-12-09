@@ -117,6 +117,15 @@ ul li:hover .dropdown-menu{
   color: white;
   font-weight: 600;
 }
+
+.see-more{
+  text-align: center;
+}
+
+.btn__secondary{
+  width: 20%;
+}
+
 /*category hover*/
 figure.effect-lily p {
 	color: rgba(255,255,255, 0.9);
